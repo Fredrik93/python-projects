@@ -1,11 +1,8 @@
 class Solution:
     def scoreOfString (self, s: str) -> int:
-        # splut up into char arr 
-        # read each char 
-        ## sum i + i+1
-        ## return sum of all sums 
-        for i in range(4):
-            currChar = ord('s')
-            print(i)
-        
-        return -1
+        result = 0
+        for i in range(len(s)-1):
+            currChar = ord(s[i])
+            nextChar = ord(s[i+1])
+            result += abs(currChar - nextChar)       
+        return result
