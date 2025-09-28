@@ -1,7 +1,7 @@
 import unittest
 import sum_of_scores
 
-class TestTwoSums(unittest.TestCase):
+class SumOfScore(unittest.TestCase):
 
     def test_1(self):
         sol = sum_of_scores.Solution()
