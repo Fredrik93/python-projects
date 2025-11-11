@@ -18,8 +18,11 @@ def Total (nums: List[int]) -> int:
         else:
             tmpXor = 0
             for i in range(len(set)-1):
+               if tmpXor != 0:
+                  tmpXor = tmpXor ^ set[i]
                tmpXor = set[i] ^ set[i+1]
-               totalXOR = totalXOR + tmpXor
+
+            totalXOR = totalXOR + tmpXor
 
 
     return totalXOR
