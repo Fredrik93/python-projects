@@ -1,5 +1,5 @@
 from typing import List
-
+# wip 5 ^ 6 xor is missing in the list below so this loop is skipping that for some reason
 def Total (nums: List[int]) -> int:
     totalXOR = 0
     list_of_sets = []
@@ -17,10 +17,13 @@ def Total (nums: List[int]) -> int:
            totalXOR = totalXOR + set[0]
         else:
             tmpXor = 0
+            curr = 0
             for i in range(len(set)-1):
                if tmpXor != 0:
-                  tmpXor = tmpXor ^ set[i]
-               tmpXor = set[i] ^ set[i+1]
+                  curr = set[i+1]
+                  tmpXor = tmpXor ^ curr
+               else:
+                  tmpXor = set[i] ^ set[i+1]
 
             totalXOR = totalXOR + tmpXor
 
