@@ -1,5 +1,6 @@
 from typing import List
 import itertools
+
 def Total (nums: List[int]) -> int:
    totalXOR = 0
    subsets = []
