@@ -1,9 +1,19 @@
 class MaxyMax:
     def maxFreqSum(self, s: str) -> int:
+        mostFrequentVowel = 0
+        mostFrequentConsonant = 0
+        vowels = "aoeiu"
         # save currentChar 
-        # compare to all other chars and count occurence 
-        # if its a vowel, check if its the most frequently used and add to variable
-
-        # if its a consonant, check if its the most frequently used and add to variable
-        return 0
+        for currentCharacter in s:
+            occurencesOfCurrentCharacter = 0
+            for character in s:
+                if currentCharacter == character:
+                    occurencesOfCurrentCharacter = occurencesOfCurrentCharacter +1
+            if currentCharacter in vowels:
+                if occurencesOfCurrentCharacter > mostFrequentVowel:
+                    mostFrequentVowel = occurencesOfCurrentCharacter
+            else:
+                if occurencesOfCurrentCharacter > mostFrequentConsonant:
+                    mostFrequentConsonant = occurencesOfCurrentCharacter 
+        return mostFrequentVowel + mostFrequentConsonant
         
