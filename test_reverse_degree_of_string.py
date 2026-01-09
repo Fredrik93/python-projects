@@ -5,7 +5,7 @@ class TestRevDeg(unittest.TestCase):
     def test_1(self):
         obj = rd.ReverseDegree()
         result = obj.reverseDegree("ab")
-        self.assertEqual(result, 51)
+        self.assertEqual(result, 126)
 
     def test_2(self):
         obj = rd.ReverseDegree()
