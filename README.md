@@ -1,6 +1,5 @@
-# python-projects
-
-You might have to create an interpreter: 
-Ctrl + p -> python Create environment -> choose venv and python3 
-Ctrl +p -> Select interpreter -> choose the venv option 
-Right click a file and run "Run python in terminal" or click the play button.
+## Test
+In root run $pytest 
+or run via the app on the left side bar 
+to debug set a breakpoint and run as usual
+all seems to work. nice
