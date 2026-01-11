@@ -7,4 +7,5 @@ def test_basic_case():
     assert solution.reversePrefix("abcd",2) == "bacd"
 
 def test_basic_case_2():
-    assert reversePrefix("xyz", 3) == "zyx"
+    solution = RevPref()
+    assert solution.reversePrefix("xyz", 3) == "zyx"
