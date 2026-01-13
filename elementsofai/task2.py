@@ -16,7 +16,9 @@ def main():
     # https://timeforchange.org/co2-emissions-shipping-goods
     # assume 20g per km per metric ton (of pineapples)
 
-
+    smallest = 10000
+    bestroute = [0, 0, 0, 0, 0]
+    
     co2 = 0.020
     port1 = 0
     for port2 in range(1, 5):
