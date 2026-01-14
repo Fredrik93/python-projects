@@ -35,7 +35,8 @@ def main():
                         if emissions < smallest:
                             smallest = emissions
                             bestroute = route
-                        print(' '.join([portnames[i] for i in route]) + " %.1f kg" % emissions)
-    print("best route: " + bestroute + " with emissions: " + smallest)
+                        #print(' '.join([portnames[i] for i in route]) + " %.1f kg" % emissions)
+    #print("best route: " + str(bestroute) + " with emissions: " + str(smallest))
+    print(' '.join([portnames[i] for i in bestroute]) + " %.1f kg" % smallest)
 
 main()

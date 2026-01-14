@@ -1,4 +1,4 @@
-from elementsofai.task2 import main
+from elementsofai.shortest_path_exercise_2 import main
 
 def test_basic():
     t2 = main()
