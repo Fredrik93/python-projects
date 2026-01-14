@@ -16,7 +16,7 @@ def main():
     # https://timeforchange.org/co2-emissions-shipping-goods
     # assume 20g per km per metric ton (of pineapples)
 
-    smallest = 10000
+    smallest = 1000000
     bestroute = [0, 0, 0, 0, 0]
     
     co2 = 0.020
@@ -32,6 +32,10 @@ def main():
                         # do not modify this print statement
                         distance = D[route[0]][route[1]] + D[route[1]][route[2]] + D[route[2]][route[3]] + D[route[3]][route[4]]
                         emissions = distance * co2
+                        if emissions < smallest:
+                            smallest = emissions
+                            bestroute = route
                         print(' '.join([portnames[i] for i in route]) + " %.1f kg" % emissions)
+    print("best route: " + bestroute + " with emissions: " + smallest)
 
 main()
