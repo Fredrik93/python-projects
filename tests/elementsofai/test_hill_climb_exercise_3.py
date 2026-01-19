@@ -1,4 +1,4 @@
-from elementsofai.hill_climb_exercise_3 import climb, h
+from elementsofai.hill_climb_exercise_3 import climb, h, main
 
 def test_climb_returns_int():
         result = climb(50, h)
