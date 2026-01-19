@@ -47,4 +47,5 @@ def main(h, x):
     return x
 
 x = main(h, x0)
+
 print("ended up at %d, highest point is %d" % (x, np.argmax(h)))
