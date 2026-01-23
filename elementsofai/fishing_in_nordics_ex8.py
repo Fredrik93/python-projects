@@ -2,8 +2,6 @@ countries = ['Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden']
 populations = [5615000, 5439000, 324000, 5080000, 9609000]
 male_fishers = [1822, 2575, 3400, 11291, 1731]
 female_fishers = [69, 77, 400, 320, 26] 
-total_fishers = sum(male_fishers) + sum(female_fishers)
-female_winners = []
 
 def guess(winner_gender):
     if winner_gender == 'female':
@@ -11,15 +9,19 @@ def guess(winner_gender):
     else:
         fishers = male_fishers
 
+    
     # write your solution here
+    # get list of probability that a winner is a fisher from a specific country
+    for fishers_in_country_per_sex, pop_of_fishers_in_country in zip (fishers,populations):
+        winner = fishers_in_country_per_sex / pop_of_fishers_in_country
+        print(f"bola {winner}")
+
+    
+    # what is the probability that the winner is a female and male of that country 
+
+
     guess = None
     biggest = 0.0
-    for i, population in enumerate(populations):
-        result = (fishers[i] / total_fishers) * 100
-        if result > biggest:
-            biggest = result
-            guess = countries[i]
-    
     return (guess, biggest)  
 
 def main():
