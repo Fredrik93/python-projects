@@ -9,20 +9,20 @@ def guess(winner_gender):
     else:
         fishers = male_fishers
 
-    
-    # write your solution here
-    # get list of probability that a winner is a fisher from a specific country
-    for fishers_in_country_per_sex, pop_of_fishers_in_country in zip (fishers,populations):
-        winner = fishers_in_country_per_sex / pop_of_fishers_in_country
-        print(f"bola {winner}")
-
-    
-    # what is the probability that the winner is a female and male of that country 
-
+    total = sum(fishers)
 
     guess = None
     biggest = 0.0
-    return (guess, biggest)  
+
+    for country, count in zip(countries, fishers):
+        probability = (count / total) * 100
+
+        if probability > biggest:
+            biggest = probability
+            guess = country
+
+    return (guess, biggest)
+
 
 def main():
     country, fraction = guess("male")
