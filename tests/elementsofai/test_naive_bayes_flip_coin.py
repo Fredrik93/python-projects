@@ -1,4 +1,11 @@
-from elementsofai.naive_bayes_flip_coin import flip
+from elementsofai.naive_bayes_flip_coin import bayes, roll
 
 def testOk():
-    assert(flip(3) == 8.0)
+    sequence = roll(True)
+    res = bayes(sequence)
+    assert(res == True)
+
+def testOk1():
+    sequence = roll(False)
+    res = bayes(sequence)
+    assert(res == False)
