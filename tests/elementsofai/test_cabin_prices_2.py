@@ -1,6 +1,5 @@
-from elementsofai.cabin_prices_2 import squared_error
+from elementsofai.cabin_prices_2 import find_best
 
-def test():
-    def test_predict():
-       
-        assert(squared_error(1,1,1) == 1)
+
+def test_predict():
+    assert(find_best(1,1,1) == 1)

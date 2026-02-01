@@ -1,27 +1,30 @@
 import numpy as np
 
+# data
 X = np.array([[66, 5, 15, 2, 500], 
               [21, 3, 50, 1, 100], 
               [120, 15, 5, 2, 1200]])
 y = np.array([250000, 60000, 525000])
-c = np.array([3000, 200 , -50, 5000, 100])    # coefficient values
- 
-def squared_error(X, y, c):
-    sse = 0.0
-    sq =0.0
-    for xi, yi in zip(X, y):
+
+# alternative sets of coefficient values
+c = np.array([[3000, 200 , -50, 5000, 100], 
+              [2000, -250, -100, 150, 250], 
+              [3000, -100, -150, 0, 150]])   
+
+def find_best(X, y, c):
+    smallest_error = np.inf
+    best_index = -1
+    for coeff in c:
+        total = 0.0
         price_prediction = 0.0
-
-        # add your code here: calculate the predicted price,
-        for x, ci in zip (xi,c):
-            price_prediction += x* ci
-        # subtract it from the actual price yi,
+        for x,ci,yi in zip(X, coeff,y):
+            price_prediction += x * ci
+             # edit here: calculate the sum of squared error with coefficient set coeff and
+                 # keep track of the one yielding the smallest squared error
         error = yi - price_prediction
-        # square the difference using (yi - prediction)**2, 
-        sq = (error)**2
-        # and add up all the differences in variable sse
-        sse += sq
+        total += error**2
 
-    print(f"sse: {sse}")
+    print("the best set is set %d" % best_index)
 
-squared_error(X, y, c)
+
+find_best(X, y, c)
