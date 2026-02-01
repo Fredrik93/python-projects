@@ -8,12 +8,15 @@ c = np.array([3000, 200 , -50, 5000, 100])    # coefficient values
  
 def squared_error(X, y, c):
     sse = 0.0
+    price_prediction = 0.0
     for xi, yi in zip(X, y):
         # add your code here: calculate the predicted price,
+        for x, ci in zip (xi,c):
+            price_prediction += x* ci
         # subtract it from the actual price yi, 
         # square the difference using (yi - prediction)**2, 
         # and add up all the differences in variable sse
-        pass
+        
 
     print(f"sse: {sse}")
 
