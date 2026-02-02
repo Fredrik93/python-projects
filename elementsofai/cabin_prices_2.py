@@ -14,16 +14,22 @@ c = np.array([[3000, 200 , -50, 5000, 100],
 def find_best(X, y, c):
     smallest_error = np.inf
     best_index = -1
-    for coeff in c:
-        total = 0.0
+    index = 0 
+    for coeff, xi, yi in zip (c, X, y):
+        price_prediction =  xi @ coeff
+        error = yi - price_prediction
+        squared_difference = error **2
+
+        if( squared_difference < smallest_error):
+            smallest_error = squared_difference
+            best_index = index
+        #set to 0 
         price_prediction = 0.0
-        for x,ci,yi in zip(X, coeff,y):
-            price_prediction += x * ci
+        error = 0.0
+        squared_difference = 0.0
+        index = index + 1
              # edit here: calculate the sum of squared error with coefficient set coeff and
                  # keep track of the one yielding the smallest squared error
-        error = yi - price_prediction
-        total += error**2
-
     print("the best set is set %d" % best_index)
 
 
