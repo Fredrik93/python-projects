@@ -16,11 +16,8 @@ def fit_model(input_file):
 
     x = data[:, :-1]   # all columns except last
     y = data[:, -1]    # last column
-
-    # read the data in and fit it. the values below are placeholder values
-    c = np.asarray([])  # coefficients of the linear regression
-    x = np.asarray([])  # input data to the linear regression
-
+    c = np.linalg.lstsq(x,y)[0]
+    
     print(c)
     print(x @ c)
 
