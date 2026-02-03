@@ -9,8 +9,6 @@ input_string = '''
 130 6 10 2 600 460700
 115 6 10 1 550 407000
 '''
-
-np.set_printoptions(precision=1)    # this just changes the output settings for easier reading
  
 def fit_model(input_file):
     # Please write your code inside this function
