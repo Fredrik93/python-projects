@@ -1,36 +1,31 @@
 import numpy as np
+from io import StringIO
 
-# data
-X = np.array([[66, 5, 15, 2, 500], 
-              [21, 3, 50, 1, 100], 
-              [120, 15, 5, 2, 1200]])
-y = np.array([250000, 60000, 525000])
+input_string = '''
+25 2 50 1 500 127900
+39 3 10 1 1000 222100
+13 2 13 1 1000 143750
+82 5 20 2 120 268000
+130 6 10 2 600 460700
+115 6 10 1 550 407000
+'''
 
-# alternative sets of coefficient values
-c = np.array([[3000, 200 , -50, 5000, 100], 
-              [2000, -250, -100, 150, 250], 
-              [3000, -100, -150, 0, 150]])   
+np.set_printoptions(precision=1)    # this just changes the output settings for easier reading
+ 
+def fit_model(input_file):
+    # Please write your code inside this function
+    data = np.genfromtxt(input_file)
 
-def find_best(X, y, c):
-    smallest_error = np.inf
-    best_index = -1
-    index = 0 
-    for coeff, xi, yi in zip (c, X, y):
-        price_prediction =  xi @ coeff
-        error = yi - price_prediction
-        squared_difference = error **2
+    x = data[:, :-1]   # all columns except last
+    y = data[:, -1]    # last column
 
-        if( squared_difference < smallest_error):
-            smallest_error = squared_difference
-            best_index = index
-        #set to 0 
-        price_prediction = 0.0
-        error = 0.0
-        squared_difference = 0.0
-        index = index + 1
-             # edit here: calculate the sum of squared error with coefficient set coeff and
-                 # keep track of the one yielding the smallest squared error
-    print("the best set is set %d" % best_index)
+    # read the data in and fit it. the values below are placeholder values
+    c = np.asarray([])  # coefficients of the linear regression
+    x = np.asarray([])  # input data to the linear regression
 
+    print(c)
+    print(x @ c)
 
-find_best(X, y, c)
+# simulate reading a file
+input_file = StringIO(input_string)
+fit_model(input_file)
