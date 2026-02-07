@@ -1,4 +1,4 @@
-from elementsofai.cabin_prices import predict
+from elementsofai.cabin_prices import main
 
 def test():
     def test_predict():
@@ -9,4 +9,4 @@ def test():
         c_test = [3000, 200, -50, 5000, 100]
         expected_price = sum(x * coef for x, coef in zip(X_test[0], c_test))
         
-        assert(predict(X_test, c_test) == expected_price)
+        assert(main(X_test, c_test) == expected_price)
